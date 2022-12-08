@@ -16,6 +16,20 @@
 
   <tbody>
     <% @pages.each do |page| %>
+    <div class="card" style="width: 18rem;">
+      <img src="https://robohash.org/YOUR-TEXT.png" class="card-img-top" alt="image">
+      <div class="card-body">
+        <h5 class="card-title"><%= page.summary %></h5>
+        <p class="card-text"><%= page.description %></p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><%= page.occurred_on.strftime("%D, %r") %></li>
+      </ul>
+      <div class="card-body">
+        <%= link_to 'Show', page %>
+        <%= link_to 'Edit', edit_page_path(page) %>
+        <%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
       <tr>
         <td><%= page.summary %></td>
         <td><%= page.occurred_on %></td>
@@ -26,10 +40,9 @@
         <td><%= link_to 'Edit', edit_page_path(page) %></td>
         <td><%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+    </div>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-
