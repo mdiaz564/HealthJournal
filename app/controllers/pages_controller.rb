@@ -32,7 +32,7 @@ class PagesController < ApplicationController
   def create
     @page = Page.new(page_params)
     @page.user_id=current_user.id
-
+    
     respond_to do |format|
       if @page.save
         format.html { redirect_to page_url(@page), notice: "Page was successfully created." }
