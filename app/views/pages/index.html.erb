@@ -1,8 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>My Health Journal</h1>
+<h1 class="homepage-title"><%= current_user.first_name %>'s Health Journal</h1>
 
-<div class="album py-5 bg-light">
+<% if current_user.pages.empty? %>
+  <div class="homepage-paragraph"><%=link_to "Create your first entry here", new_page_path %></div>
+<% else %>
+
+<div class="album py-5 blue-back">
     <div class="container">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
@@ -10,7 +14,7 @@
     <div class="col">
     <div class="card" style="width: 18rem;">
 
-    <% if page.image == "" %>
+    <% if !page.image.present? %>
       <% if page.degree == "Mild" %>
         <img src="/images/mild.png" class="card-img-top" alt="image">
       <% elsif page.degree == "Moderate" %>
@@ -23,13 +27,13 @@
     <% end %>
 
       <div class="card-body">
-        <h5 class="card-title"><%= page.summary %></h5>
-        <p class="card-text"><%= page.description %></p>
+        <h5 class="card-title little-text"><%= page.summary %></h5>
+        <p class="card-text little-text"><%= page.description %></p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item"><%= page.occurred_on.strftime("%D, %r") %></li>
+        <li class="list-group-item little-text"><%= page.occurred_on.strftime("%D, %r") %></li>
       </ul>
-      <div class="card-body">
+      <div class="card-body little-text">
         <%= link_to 'Show', page %>
         <%= link_to 'Edit', edit_page_path(page) %>
         <%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -41,5 +45,5 @@
 </div>
 </div>
 </div>
-
+<% end %>
 <br>

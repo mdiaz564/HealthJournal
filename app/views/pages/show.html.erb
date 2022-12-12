@@ -22,7 +22,17 @@
 
 <p>
   <strong>Image:</strong>
-  <%= @page.image %>
+  <% if !@page.image.present? %>
+      <% if @page.degree == "Mild" %>
+        <img src="/images/mild.png" alt="image" style="width: 18rem;">
+      <% elsif @page.degree == "Moderate" %>
+        <img src="/images/moderate_face.png" alt="image" style="width: 18rem;">
+      <% elsif @page.degree == "Severe" %>
+        <img src="/images/severe.png" alt="image" style="width: 18rem;">
+      <% end %>
+    <% else %>
+        <img src="<%= @page.image %>" alt="image" style="width: 18rem;">
+    <% end %>
 </p>
 
 
