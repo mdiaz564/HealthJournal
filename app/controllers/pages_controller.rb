@@ -12,7 +12,7 @@ class PagesController < ApplicationController
   # GET /pages or /pages.json
   def index
     #@pages = Page.where({user_id: current_user.id})
-    @pages = current_user.pages
+    @pages = current_user.pages.order({:occurred_on => :desc})
   end
 
   # GET /pages/1 or /pages/1.json

@@ -1,3 +1,33 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.nav-title{
+Font-Family: 'Oxygen', Sans-Serif;
+Font-Size: 50px;
+color: rgb(114, 196, 124); 
+}
+.nav-link{
+  Font-Family: 'Oxygen', Sans-Serif;
+  Font-Size: 16px;
+}
+.homepage-title{
+  Font-Family: 'Oxygen', Sans-Serif;
+  Font-Size: 60px;
+  color: rgb(114, 196, 124); 
+  text-align: center;
+}
+.homepage-paragraph{
+  Font-Family: 'Noto Serif', Serif;
+  Font-Size: 30px;
+  text-align: center;
+}
+.homepage-spacing{
+  padding: 25px
+}
+.little-text{
+  Font-Family: 'Noto Serif', Serif;
+}
+.blue-back{
+  background-color: rgba(139, 212, 232, 0.27); 
+}
