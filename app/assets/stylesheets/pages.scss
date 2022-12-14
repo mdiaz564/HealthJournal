@@ -4,7 +4,7 @@
 
 .nav-title{
 Font-Family: 'Oxygen', Sans-Serif;
-Font-Size: 50px !important;
+Font-Size: 30px !important;
 color: rgb(114, 196, 124) !important; 
 }
 .nav-link{
@@ -16,6 +16,7 @@ color: rgb(114, 196, 124) !important;
   Font-Size: 60px;
   color: rgb(114, 196, 124); 
   text-align: center;
+  /*background-color: rgba(139, 212, 232, 0.27); */
 }
 .homepage-paragraph{
   Font-Family: 'Noto Serif', Serif;
@@ -29,11 +30,25 @@ color: rgb(114, 196, 124) !important;
   Font-Family: 'Noto Serif', Serif;
 }
 .blue-back{
-  background-color: rgba(139, 212, 232, 0.27); 
+  background-color: rgba(139, 212, 232, 0.27);
 }
 .container{
   justify-content: center !important;
 }
 .bblb{
   padding-left: 6em;
+}
+.home-image{
+  display: flex;
+  justify-content: center;
+}
+.img-border {
+  border: 5px solid #555;
+}
+.form-color{
+  background-color: rgb(114, 196, 124) !important; 
+}
+.form-l-f{
+  Font-Family: 'Noto Serif', Serif;
+  Font-Size: 15px;
 }

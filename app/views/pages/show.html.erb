@@ -1,40 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Summary:</strong>
-  <%= @page.summary %>
-</p>
-
-<p>
-  <strong>Occurred on:</strong>
-  <%= @page.occurred_on %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @page.description %>
-</p>
-
-<p>
-  <strong>Degree:</strong>
-  <%= @page.degree %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <% if !@page.image.present? %>
-      <% if @page.degree == "Mild" %>
-        <img src="/images/mild.png" alt="image" style="width: 18rem;">
-      <% elsif @page.degree == "Moderate" %>
-        <img src="/images/moderate_face.png" alt="image" style="width: 18rem;">
-      <% elsif @page.degree == "Severe" %>
-        <img src="/images/severe.png" alt="image" style="width: 18rem;">
+<div class="home-image">
+<div class="card" style="width: 30rem;">
+<ul class="list-group list-group-flush">
+  <li class="list-group-item">
+    <p><strong>Summary: </strong><%= @page.summary %></p>
+  </li>
+  <li class="list-group-item">
+  <p><strong>Occurred on: </strong><%= @page.occurred_on %></p>
+  </li>
+  <li class="list-group-item">
+    <p><strong>Description: </strong><%= @page.description %></p>
+  </li>
+  <li class="list-group-item">
+  <p><strong>Degree: </strong><%= @page.degree %></p>
+  </li>
+  <li class="list-group-item">
+    <p>
+    <strong>Image:</strong>
+    <% if !@page.image.present? %>
+        <% if @page.degree == "Mild" %>
+          <img src="/images/mild.png" alt="image" style="width: 18rem;">
+        <% elsif @page.degree == "Moderate" %>
+          <img src="/images/moderate_face.png" alt="image" style="width: 18rem;">
+        <% elsif @page.degree == "Severe" %>
+          <img src="/images/severe.png" alt="image" style="width: 18rem;">
+        <% end %>
+      <% else %>
+          <img src="<%= @page.image %>" alt="image" style="width: 13rem;">
       <% end %>
-    <% else %>
-        <img src="<%= @page.image %>" alt="image" style="width: 18rem;">
-    <% end %>
-</p>
-
-
-<%= link_to 'Edit', edit_page_path(@page) %> |
-<%= link_to 'Back', pages_path %>
+    </p>
+  </li>
+  <li class="list-group-item"><%= link_to 'Edit', edit_page_path(@page) %> |
+<%= link_to 'Back', pages_path %></li>
+</ul>
+</div>
+</div>
