@@ -1,3 +1,5 @@
+<div class="card form-color" style="width: 28rem;">
+<ul class="list-group list-group-flush">
 <%= form_with(model: page)  do |form| %>
   <% if page.errors.any? %>
     <div id="error_explanation">
@@ -11,34 +13,31 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :summary %>
-    <%= form.text_field :summary %>
+  <div class="field mb-3">
+    <%= form.label :summary, {class: "form-label form-l-f"} %>
+    <%= form.text_field :summary, {class: "form-control"} %>
   </div>
 
   <div class="field">
-    <%= form.label :occurred_on %>
+    <%= form.label :occurred_on, {class: "form-l-f"} %>
     <%= form.datetime_select :occurred_on, ampm: true %>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+  <div class="field mb-3">
+    <%= form.label :description, {class:"form-label form-l-f"} %>
+    <%= form.text_area :description, {class:"form-control"}%>
   </div>
 
   <div class="field">
-    <%= form.label :degree %>
+    <%= form.label :degree, {class:"form-l-f"} %>
     <%#= form.text_field :degree %>
     <%= form.select :degree, ["Mild", "Moderate", "Severe"] %>
-
   </div>
 
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
+  <div class="field mb-3">
+    <%= form.label :image, {class:"form-label form-l-f"} %>
+    <%= form.file_field :image, {class:"form-control form-l-f", id: "formFile"} %>
   </div>
-
-  
 
   <!--<div class="field">
     <%= form.label :user_id %>
@@ -49,3 +48,5 @@
     <%= form.submit %>
   </div>
 <% end %>
+</ul>
+</div>

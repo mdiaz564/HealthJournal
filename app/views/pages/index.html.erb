@@ -1,3 +1,4 @@
+
 <p id="notice"><%= notice %></p>
 
 <h1 class="homepage-title"><%= current_user.first_name %>'s Health Journal</h1>
@@ -6,7 +7,7 @@
   <div class="homepage-paragraph"><%=link_to "Create your first entry here", new_page_path %></div>
 <% else %>
 
-<div class="album py-5 blue-back">
+<div class="album py-5">
     <div class="container">
       <div class="row bblb row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
@@ -46,4 +47,4 @@
 </div>
 </div>
 <% end %>
-<br>
+
